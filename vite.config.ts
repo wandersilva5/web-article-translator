@@ -1,12 +1,24 @@
-// vite.config.ts
+// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  server: {
-    port: 3000,
-    open: true
+  plugins: [
+    react(),
+    {
+      name: 'remove-html-comments',
+      transformIndexHtml(html) {
+        // Remove os comentários HTML
+        return html.replace(/<!--[\s\S]*?-->/g, '');
+      }
+    }
+  ],
+  build: {
+    minify: 'terser',
+    terserOptions: {
+      format: {
+        comments: false
+      }
+    }
   }
 })

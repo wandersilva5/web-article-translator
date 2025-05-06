@@ -29,30 +29,31 @@ const ArticleForm: React.FC<ArticleFormProps> = ({ onSubmit, isLoading }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-4">Tradutor de Artigos Web</h2>
+    <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+      <h2 className="text-xl font-bold mb-4 text-gray-800">Tradutor de Artigos Web</h2>
+      <p className="text-gray-600 mb-4">Cole a URL de um artigo em qualquer idioma para traduzi-lo para português</p>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="url" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="url" className="block text-sm font-medium text-gray-700 mb-2">
             URL do Artigo
           </label>
           <input
             type="text"
             id="url"
-            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
             placeholder="https://example.com/article"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             disabled={isLoading}
           />
-          {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+          {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
         </div>
         <button
           type="submit"
-          className={`w-full py-2 px-4 rounded font-medium ${
+          className={`w-full py-3 px-4 rounded-md font-medium text-white transition-colors duration-200 ${
             isLoading
               ? 'bg-gray-400 cursor-not-allowed'
-              : 'bg-blue-500 hover:bg-blue-600 text-white'
+              : 'bg-blue-600 hover:bg-blue-700 shadow-sm'
           }`}
           disabled={isLoading}
         >
