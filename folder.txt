@@ -1,0 +1,28 @@
+web-article-translator/
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── ArticleForm.tsx
+│   │   ├── ArticleViewer.tsx
+│   │   ├── LoadingSpinner.tsx
+│   │   └── TranslationViewer.tsx
+│   ├── services/
+│   │   ├── articleService.ts
+│   │   ├── translationService.ts
+│   │   └── wordService.ts
+│   ├── types/
+│   │   └── index.ts
+│   ├── utils/
+│   │   ├── htmlParser.ts
+│   │   └── wordGenerator.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── .gitignore
+├── index.html
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+├── tsconfig.json
+└── vite.config.ts
